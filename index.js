@@ -23,17 +23,18 @@ lngE = map.getBounds().getEast();
 lngW = map.getBounds().getWest();
 latN = map.getBounds().getNorth();
 latS = map.getBounds().getSouth();
-alldata = 
-[{"event_id":"001","latlong":[25.2,121.3],"location":"NTU", "status":"high", "info_list":[
-    {"report_time":new Date(1519617015557), "user_id":"user000", "report_id":"0001", "description":"111there's a hole!!!"},
-    {"report_time":new Date(1519617010007), "user_id":"PK", "report_id":"0002", "description":" 222HOLEEEEEEE hole!!!"},
-    {"report_time":new Date(1519617013337), "user_id":"HELLO", "report_id":"0003", "description":" 333HOLEEEEEEE hole!!!"},
-    {"report_time":new Date(1519617014447), "user_id":"usr2", "report_id":"0004", "description":" 444HOLEEEEEEE hole!!!"},
-    {"report_time":new Date(1519617016757), "user_id":"NASA", "report_id":"0005", "description":" 555如果在這裡打一串很長很長很長很長的中文會怎樣呢到底alalalaajoefi ;jfiojiro ;wjfio;jaio; wejufhawuriu ilawhfiaiuhfla"}]},
-{"event_id":"002","latlong":[25.4,121.1],"location":undefined,"status":"low", "info_list":[
-    {"report_time":new Date(1519617013333),"user_id":"user000","report_id":"0001","description":"I'm not sure if it's on fire..."}]
-}]
-alldata.push()
+
+// alldata = 
+// [{"event_id":"001","latlong":[25.2,121.3],"location":"NTU", "status":"high", "info_list":[
+//     {"report_time":new Date(1519617015557), "user_id":"user000", "report_id":"0001", "description":"111there's a hole!!!"},
+//     {"report_time":new Date(1519617010007), "user_id":"PK", "report_id":"0002", "description":" 222HOLEEEEEEE hole!!!"},
+//     {"report_time":new Date(1519617013337), "user_id":"HELLO", "report_id":"0003", "description":" 333HOLEEEEEEE hole!!!"},
+//     {"report_time":new Date(1519617014447), "user_id":"usr2", "report_id":"0004", "description":" 444HOLEEEEEEE hole!!!"},
+//     {"report_time":new Date(1519617016757), "user_id":"NASA", "report_id":"0005", "description":" 555如果在這裡打一串很長很長很長很長的中文會怎樣呢到底alalalaajoefi ;jfiojiro ;wjfio;jaio; wejufhawuriu ilawhfiaiuhfla"}]},
+// {"event_id":"002","latlong":[25.4,121.1],"location":undefined,"status":"low", "info_list":[
+//     {"report_time":new Date(1519617013333),"user_id":"user000","report_id":"0001","description":"I'm not sure if it's on fire..."}]
+// }]
+// alldata.push()
 
 
 function getLocation() {
@@ -121,7 +122,7 @@ function show_icon(){
         else{
         tmp_mark = L.marker([ data_list[j]["latlong"][0], data_list[j]["latlong"][1] ])
         tmp_mark.addTo(myLayerGroup)
-        tmp_mark.bindPopup(popup_content(data_list[j]),{maxHeight: 300})
+        tmp_mark.bindPopup(popup_content(data_list[j]),{maxHeight: 200})
         console.log(`add ${j}'th data's marker to map`)}
     }
 
@@ -158,25 +159,24 @@ function popup_content(_data){
     s0 +=
     `<div style="height: 50px ">
         <div style="float: left;">
-            ${_data["event_name"]} <br>
-            @${_data["location"]}
+            ${_data["event_id"]} <br>
+            @(${_data["latlong"][0]},${_data["latlong"][1]})
         </div>
         <div style="float: right;">
-            <input type="button" id="edit-button" value="Edit">
-            <input type="button" id="report-problem-button" value="Report"> 
+            <input type="button" id="report-problem-button" value="!!"> 
         </div>
     </div>`
-    s0 += `<div><div style="float: left; width: 62%; min-height: 200px; max-height: 200px; border: solid;overflow:scroll">`
+    s0 += `<div><div style="float: left; width: 62%; min-height: 100px; max-height: 200px; border: solid;overflow:scroll">`
     for (var i = 0; i < _data["info_list"].length; i++) {
         s0 += `<div style="border: solid;">
-                ${_data["info_list"][i]["user_id"]} <br> ${_data["info_list"][i]["report_time"]} 
+                ${_data["info_list"][i]["user_id"]} <br> ${_data["info_list"][i]["report_time"].getDate()} 
                 <div style="border: dashed; padding:2px;overflow-x: scroll">
                     ${_data["info_list"][i]["description"]}
                 </div></div><br>`
     }
     s0 += `</div>
-            <div style="float: right; width: 30%; min-height: 200px;max-height: 200px; border: solid;">
-                Photo?
+            <div style="float: right; width: 30%; min-height: 100px;max-height: 200px; border: solid;">
+                (Photo)
             </div>
         </div><br><br></div>`
     return s0;
@@ -208,4 +208,4 @@ function all_data_html(data){
 
 show_icon()
 
-
+console.log(alldata)

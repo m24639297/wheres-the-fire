@@ -15,6 +15,7 @@
 </head>
 
 <body>
+	<script src="./user.js"></script>
 <!-- <div class = "head-bar" >
 	<input type="button" name="iMapbook" value="iMapbook" style="float: left" class="head-main-button click" onclick="javasript:location.href = 'main.html'">
 	<input type="button" name="login" value="Login" style="float: right" class="login-button click">
@@ -56,7 +57,7 @@
 		<div id="right-div" class="col-md-4">
 			<div id="report">
 				<center><div style="font-size: 25px; background-color: #EEEEEE;">Report</div></center>
-				<form>
+				<div>
 					<h4>Current location</h4>
 					<div style="margin-left: 10px;">
 						Latitude : <input type="text" id="input-lat"><br>
@@ -66,7 +67,7 @@
 					</div>
 					<h4>Azimuth (north-based)</h4>
 					<div style="margin-left: 10px;">
-						Azimuth: <input type="text" id="input-azimuth"><br>
+						Azimuth (°): <input type="text" id="input-azimuth"><br>
 					</div>
 					<h4>Landform</h4>
 					<div style="margin-left: 10px;">
@@ -76,9 +77,13 @@
 						<input type="radio" name="landform" value="snow-forest"> taiga / snow forest <br>
 						<input type="radio" name="landform" value="desert"> desert<br>
 					</div>
+					<h4>Description</h4>
+					<div style="margin-left: 10px;">
+						<input type="text" id="input-description"><br>
+					</div>
 
-					<center><br><input type="submit" value="submit"  style="background-color: #CCD; font-size: 20px; border = 2px;"></center>
-				</form>
+					<center><br><input type="submit" value="submit"  style="background-color: #CCD; font-size: 20px; border = 2px;" onclick="input_submit()"></center>
+				</div>
 
 			</div>
 		</div>
@@ -86,6 +91,7 @@
 </div>
 <script src="./database.js"></script>
 <script src="./report.js"></script>
+
 
 </body>
 </html>
