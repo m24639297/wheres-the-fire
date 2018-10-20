@@ -1,0 +1,30 @@
+#page-title{
+	margin-bottom: 15px;
+}
+
+
+#board-and-type{
+	height: 200px;
+	border: solid;
+
+}
+
+#event-list{
+	height: 300px;
+	border: solid;
+}
+#event-list-head{
+	min-height: 10%;
+	max-height: 15%;
+
+}
+#event-list-content{
+	min-height: 70%;
+	max-height: 70%;
+	overflow: scroll;
+}
+#event-list-button{
+	max-height: 10%
+	float: right;
+}
+
