@@ -1,6 +1,6 @@
 # spot-that-fire
 
-## A public platform allowing users to engage in wildfire detection and prevention.
+## A public platform for public wildfire detection and prevention.
 
 
 ## Motivation
