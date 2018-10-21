@@ -1,4 +1,4 @@
-# spot-that-fire
+# Where's The Fire
 
 ## A public platform for wildfire detection and prevention.
 
