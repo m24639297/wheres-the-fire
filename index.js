@@ -11,7 +11,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
         'Imagery c <a href="http://mapbox.com">Mapbox</a>',
     id: 'mapbox.streets'
 }).addTo(map);
-map.setView(current_location,8)
+map.setView(current_location,10)
 
 
 
@@ -169,7 +169,7 @@ function popup_content(_data){
     s0 += `<div><div style="float: left; width: 62%; min-height: 100px; max-height: 200px; border: solid;overflow:scroll">`
     for (var i = 0; i < _data["info_list"].length; i++) {
         s0 += `<div style="border: solid;">
-                ${_data["info_list"][i]["user_id"]} <br> ${_data["info_list"][i]["report_time"].getDate()} 
+                ${_data["info_list"][i]["user_id"]} <br> ${_data["info_list"][i]["report_time"]} 
                 <div style="border: dashed; padding:2px;overflow-x: scroll">
                     ${_data["info_list"][i]["description"]}
                 </div></div><br>`

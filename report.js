@@ -222,6 +222,12 @@ function calculate(json){
 //
 //////////////////////////
 
+
+
+
+
+
+
 var current_location = [25.0202, 121.553]
 var lat = current_location[0];
 var lng = current_location[1];
@@ -235,7 +241,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
         'Imagery c <a href="http://mapbox.com">Mapbox</a>',
     id: 'mapbox.streets'
 }).addTo(map);
-map.setView(current_location,10)
+map.setView(current_location,12)
 
 
 
